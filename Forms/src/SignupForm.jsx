@@ -20,8 +20,12 @@ export default function SignupForm() {
     console.log(name);
     const value = evt.target.value;
     setUsername((userData) => {
-      userData[name] = value;
-      return { ...userData };
+      return {
+        ...userData,
+        [name]: value,
+      };
+      //   userData[name] = value;
+      //   return { ...userData };
     });
   };
   return (
