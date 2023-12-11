@@ -12,6 +12,7 @@ function App() {
   });
 
   function handleChange(event) {
+    event.preventDefault();
     // const fname = event.target.name;
     const { name, value, checked, type } = event.target;
 
@@ -20,9 +21,13 @@ function App() {
     });
     console.log(input);
   }
+
+  function SubmitHandler(event) {
+    event.preventDefault();
+  }
   return (
     <div>
-      <form>
+      <form onSubmit={SubmitHandler}>
         <input
           type="text"
           placeholder="first name"
@@ -97,6 +102,10 @@ function App() {
         </select>
 
         <label htmlFor="fav-car">Cars</label>
+
+        {/* <input type="submit" value /> */}
+        <br />
+        <button>Submit</button>
       </form>
     </div>
   );
