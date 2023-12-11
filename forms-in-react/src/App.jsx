@@ -7,14 +7,16 @@ function App() {
     lastname: "",
     comment: "",
     isVisible: true,
+    mode: "",
+    favCar: "",
   });
 
   function handleChange(event) {
-    const fname = event.target.name;
+    // const fname = event.target.name;
+    const { name, value, checked, type } = event.target;
 
     setInput((prev) => {
-      prev[fname] = event.target.value;
-      return { ...prev };
+      return { ...prev, [name]: type === "checkbox" ? checked : value };
     });
     console.log(input);
   }
@@ -58,6 +60,43 @@ function App() {
           id="isvisible"
           checked={input.isVisible}
         />
+
+        <br />
+        <br />
+
+        <input
+          type="radio"
+          onChange={handleChange}
+          name="mode"
+          value="Online Mode"
+          id="Online-Mode"
+          checked={input.mode === "Online Mode"}
+        />
+        <label htmlFor="Offline-Mode">Offline mode</label>
+        <input
+          type="radio"
+          onChange={handleChange}
+          name="mode"
+          value="Offline Mode"
+          id="Offline-Mode"
+          checked={input.mode === "Offline Mode"}
+        />
+        <label htmlFor="Offline-Mode">Online mode</label>
+        <select
+          onChange={handleChange}
+          name="favCar"
+          id="fav-car"
+          value={input.favCar}
+        >
+          <option value="Bmw">Bmw</option>
+          <option value="thar">thar</option>
+          <option value="audi">audi</option>
+          <option value="fortuner">fortuner</option>
+          <option value="mercedes">mercedes</option>
+          <option value="pagani">pagani</option>
+        </select>
+
+        <label htmlFor="fav-car">Cars</label>
       </form>
     </div>
   );
