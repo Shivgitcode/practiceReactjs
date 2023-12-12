@@ -11,10 +11,14 @@ function App() {
     city: "",
     state: "",
     code: "",
+    comments: "",
+    candidates: "",
+    offers: "",
   });
   function handleChange(evt) {
+    const { name, type, checked, value } = evt.target;
     setFormData((prev) => {
-      return { ...prev, [evt.target.name]: evt.target.value };
+      return { ...prev, [name]: type === "checkbox" ? checked : value };
     });
     console.log(formData);
   }
@@ -105,6 +109,42 @@ function App() {
             value={formData.code}
             onChange={handleChange}
           />
+        </div>
+        <div>
+          <h3>By Email</h3>
+          <div>
+            <label htmlFor="comments">Comments</label>
+            <input
+              type="checkbox"
+              name="comments"
+              id="comments"
+              checked={formData.isChecked}
+              onChange={handleChange}
+            />
+            <p>Get notified when someones posts a comment on posting</p>
+          </div>
+          <div>
+            <label htmlFor="candidates">Candidates</label>
+            <input
+              type="checkbox"
+              name="candidates"
+              id="candidates"
+              checked={formData.isChecked}
+              onChange={handleChange}
+            />
+            <p>Get notified when a candidate applies for a job</p>
+          </div>
+          <div>
+            <label htmlFor="offers">Offers</label>
+            <input
+              type="checkbox"
+              name="offers"
+              id="offers"
+              checked={formData.isChecked}
+              onChange={handleChange}
+            />
+            <p>Get notified when a candidate accepts or rejects an offer</p>
+          </div>
         </div>
       </form>
     </div>
