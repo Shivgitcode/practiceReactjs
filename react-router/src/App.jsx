@@ -1,8 +1,9 @@
 import "./App.css";
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes, Link, NavLink } from "react-router-dom";
 import Home from "./components/Home";
 import Support from "./components/support";
 import About from "./components/about";
+import MainHeading from "./components/Mainheading";
 
 function App() {
   return (
@@ -10,20 +11,22 @@ function App() {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <Link to="/support">Support</Link>
+            <NavLink to="/support">Support</NavLink>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <NavLink to="/about">About</NavLink>
           </li>
         </ul>
       </nav>
       <Routes>
-        <Route path="/" element={<Home></Home>}></Route>
-        <Route path="/support" element={<Support></Support>}></Route>
-        <Route path="/about" element={<About></About>}></Route>
+        <Route path="/" element={<MainHeading></MainHeading>}>
+          <Route index element={<Home></Home>}></Route>
+          <Route path="/support" element={<Support></Support>}></Route>
+          <Route path="/about" element={<About></About>}></Route>
+        </Route>
       </Routes>
     </div>
   );
