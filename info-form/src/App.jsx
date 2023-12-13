@@ -135,77 +135,114 @@ function App() {
             className=" outline outline-black/50 outline-[2px] rounded-md placeholder:p-2 focus:outline-blue-700 px-[5px]"
           />
         </div>
-        <div className="flex flex-col justify-between">
-          <h3>By Email</h3>
+        <div className="flex flex-col gap-8">
+          <h3 className="font-bold text-[16px] font-sans">By Email</h3>
           <div className="flex gap-[2px] flex-col">
-            <label htmlFor="comments">Comments</label>
-            <input
-              type="checkbox"
-              name="comments"
-              id="comments"
-              checked={formData.comments}
-              onChange={handleChange}
-            />
+            <div className="flex flex-row-reverse justify-end gap-x-2">
+              <label
+                htmlFor="comments"
+                className="font-bold text-[16px] font-sans"
+              >
+                Comments
+              </label>
+              <input
+                type="checkbox"
+                name="comments"
+                id="comments"
+                checked={formData.comments}
+                onChange={handleChange}
+              />
+            </div>
+
             <p>Get notified when someones posts a comment on posting</p>
           </div>
           <div className="flex flex-col gap-[2px]">
-            <label htmlFor="candidates">Candidates</label>
-            <input
-              type="checkbox"
-              name="candidates"
-              id="candidates"
-              checked={formData.candidates}
-              onChange={handleChange}
-            />
+            <div className="flex flex-row-reverse justify-end gap-x-2">
+              <label
+                htmlFor="candidates"
+                className="font-bold text-[16px] font-sans"
+              >
+                Candidates
+              </label>
+              <input
+                type="checkbox"
+                name="candidates"
+                id="candidates"
+                checked={formData.candidates}
+                onChange={handleChange}
+              />
+            </div>
+
             <p>Get notified when a candidate applies for a job</p>
           </div>
           <div className="flex flex-col gap-[2px]">
-            <label htmlFor="offers">Offers</label>
-            <input
-              type="checkbox"
-              name="offers"
-              id="offers"
-              checked={formData.offers}
-              onChange={handleChange}
-            />
+            <div className="flex flex-row-reverse justify-end gap-x-2">
+              <label
+                htmlFor="offers"
+                className="font-bold text-[16px] font-sans"
+              >
+                Offers
+              </label>
+              <input
+                type="checkbox"
+                name="offers"
+                id="offers"
+                checked={formData.offers}
+                onChange={handleChange}
+              />
+            </div>
+
             <p>Get notified when a candidate accepts or rejects an offer</p>
           </div>
         </div>
 
-        <div>
-          <h3>Push Notifications</h3>
-          <p>These are delivered via SMS to your mobile phone</p>
+        <div className="flex flex-col gap-3">
           <div>
-            <label htmlFor="Everything">Everything</label>
-            <input
-              type="radio"
-              name="rbtn"
-              id="Everything"
-              value="everything"
-              checked={formData.rbtn === "everything"}
-              onChange={handleChange}
-            />
-            <label htmlFor="Same-email">Same as email</label>
-            <input
-              type="radio"
-              name="rbtn"
-              id="Same-email"
-              value="same as email"
-              checked={formData.rbtn === "same as email"}
-              onChange={handleChange}
-            />
-            <label htmlFor="do-push">do push notifications</label>
-            <input
-              type="radio"
-              name="rbtn"
-              id="do-push"
-              value="do push"
-              checked={formData.rbtn === "do push"}
-              onChange={handleChange}
-            />
+            <h3 className="font-bold font-sans">Push Notifications</h3>
+            <p>These are delivered via SMS to your mobile phone</p>
+          </div>
+
+          <div className="flex flex-col">
+            <div className="flex justify-start items-center gap-2">
+              <label htmlFor="Everything">Everything</label>
+              <input
+                type="radio"
+                name="rbtn"
+                id="Everything"
+                value="everything"
+                checked={formData.rbtn === "everything"}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="flex justify-start items-center gap-2">
+              <label htmlFor="Same-email">Same as email</label>
+              <input
+                type="radio"
+                name="rbtn"
+                id="Same-email"
+                value="same as email"
+                checked={formData.rbtn === "same as email"}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="flex justify-start items-center gap-2">
+              <label htmlFor="do-push">do push notifications</label>
+              <input
+                type="radio"
+                name="rbtn"
+                id="do-push"
+                value="do push"
+                checked={formData.rbtn === "do push"}
+                onChange={handleChange}
+              />
+            </div>
           </div>
         </div>
-        <button>Save</button>
+        <button className=" border self-start px-5 py-3 font-bold font-sans text-white rounded-md bg-blue-600 hover:bg-blue-500  transition-all duration-100  ">
+          Save
+        </button>
       </form>
     </div>
   );
