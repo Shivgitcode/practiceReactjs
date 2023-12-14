@@ -1,3 +1,3 @@
 export default function Dashboard() {
-  return <div>Welcome to StudyNotion</div>;
+  return <div className="flex justify-center">Welcome to StudyNotion</div>;
 }
