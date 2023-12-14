@@ -5,11 +5,14 @@ import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import { Route, Routes } from "react-router-dom";
+import { useState } from "react";
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
     <div>
-      <Navbar></Navbar>
+      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}></Navbar>
 
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
