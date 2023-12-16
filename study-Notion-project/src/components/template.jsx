@@ -1,5 +1,7 @@
 import frameImage from "../assets/frame.png";
-const Template = ({ title, desc1, desc2, image, setIsLoggedIn }) => {
+import SignupForm from "./SignupForm";
+import { LoginForm } from "./LoginForm";
+const Template = ({ title, desc1, desc2, image, setIsLoggedIn, formtype }) => {
   return (
     <div>
       <div>

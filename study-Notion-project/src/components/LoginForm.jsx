@@ -17,10 +17,10 @@ export const LoginForm = () => {
           Email Address <sup>*</sup>
         </p>
         <input
-          type="text"
+          type="email"
           required
-          value={formData.email}
           onChange={changeHandler}
+          value={formData.email}
           placeholder="Enter email id"
           name="email"
         />
