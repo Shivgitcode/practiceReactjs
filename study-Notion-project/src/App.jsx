@@ -5,6 +5,7 @@ import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import { Route, Routes } from "react-router-dom";
+import PrivateRoute from "./components/PrivateRoute";
 import { useState } from "react";
 
 function App() {
@@ -24,7 +25,14 @@ function App() {
           path="/signup"
           element={<Signup setIsLoggedIn={setIsLoggedIn}></Signup>}
         ></Route>
-        <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
+        <Route
+          path="/dashboard"
+          element={
+            <PrivateRoute isLoggedIn={isLoggedIn}>
+              <Dashboard></Dashboard>
+            </PrivateRoute>
+          }
+        ></Route>
       </Routes>
     </div>
   );
