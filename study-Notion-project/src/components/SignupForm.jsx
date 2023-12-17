@@ -46,10 +46,10 @@ function SignupForm({ setIsLoggedIn }) {
         <button>Instructor</button>
       </div>
       <form onSubmit={submitHandler}>
-        <div>
-          <label htmlFor="">
-            <p>
-              First Name <sup>*</sup>
+        <div className="">
+          <label className="w-full">
+            <p className="text-[0.875rem] text-richblack-5 mb-1 leading-[1.375rem]">
+              First Name <sup className="text-pink-200">*</sup>
             </p>
             <input
               type="text"
@@ -58,12 +58,13 @@ function SignupForm({ setIsLoggedIn }) {
               onChange={changeHandler}
               value={formData.firstName}
               placeholder="Enter first name"
+              className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
             />
           </label>
 
-          <label htmlFor="">
-            <p>
-              Last Name <sup>*</sup>
+          <label className="w-full">
+            <p className="text-[0.875rem] text-richblack-5 mb-1 leading-[1.375rem]">
+              Last Name <sup className="text-pink-200">*</sup>
             </p>
             <input
               type="text"
@@ -72,13 +73,14 @@ function SignupForm({ setIsLoggedIn }) {
               onChange={changeHandler}
               value={formData.lastName}
               placeholder="Enter last name"
+              className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
             />
           </label>
         </div>
 
-        <label htmlFor="">
-          <p>
-            Email Address <sup>*</sup>
+        <label className="w-full">
+          <p className="text-[0.875rem] text-richblack-5 mb-1 leading-[1.375rem]">
+            Email Address <sup className="text-pink-200">*</sup>
           </p>
           <input
             type="email"
@@ -87,12 +89,13 @@ function SignupForm({ setIsLoggedIn }) {
             onChange={changeHandler}
             value={formData.email}
             placeholder="Enter Email Address"
+            className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
           />
         </label>
         <div>
-          <label>
-            <p>
-              Create Password <sup>*</sup>
+          <label className="w-full relative">
+            <p className="text-[0.875rem] text-richblack-5 mb-1 leading-[1.375rem]">
+              Create Password <sup className="text-pink-200">*</sup>
             </p>
             <input
               type={showPassword ? "text" : "password"}
@@ -100,20 +103,27 @@ function SignupForm({ setIsLoggedIn }) {
               name="password"
               onChange={changeHandler}
               value={formData.password}
-              placeholder="Enter Email Address"
+              placeholder="Create Password"
+              className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
             />
-            <span onClick={() => setShowPassword((prev) => !prev)}>
+            <span
+              onClick={() => setShowPassword((prev) => !prev)}
+              className="absolute right-3 top-[38px] cursor-pointer "
+            >
               {showPassword ? (
-                <AiOutlineEye></AiOutlineEye>
+                <AiOutlineEye fontSize={24} fill="#AFB2BF"></AiOutlineEye>
               ) : (
-                <AiOutlineEyeInvisible></AiOutlineEyeInvisible>
+                <AiOutlineEyeInvisible
+                  fontSize={24}
+                  fill="#AFB2BF"
+                ></AiOutlineEyeInvisible>
               )}
             </span>
           </label>
 
-          <label>
-            <p>
-              Confirm Password <sup>*</sup>
+          <label className="w-full relative">
+            <p className="text-[0.875rem] text-richblack-5 mb-1 leading-[1.375rem]">
+              Confirm Password <sup className="text-pink-200">*</sup>
             </p>
             <input
               type={showPassword2 ? "text" : "password"}
@@ -122,17 +132,26 @@ function SignupForm({ setIsLoggedIn }) {
               onChange={changeHandler}
               value={formData.confirmPassword}
               placeholder="confirm Password"
+              className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
             />
-            <span onClick={() => setShowPassword2((prev) => !prev)}>
+            <span
+              onClick={() => setShowPassword2((prev) => !prev)}
+              className="absolute right-3 top-[68px] cursor-pointer "
+            >
               {showPassword2 ? (
-                <AiOutlineEye></AiOutlineEye>
+                <AiOutlineEye fontSize={24} fill="#AFB2BF"></AiOutlineEye>
               ) : (
-                <AiOutlineEyeInvisible></AiOutlineEyeInvisible>
+                <AiOutlineEyeInvisible
+                  fontSize={24}
+                  fill="#AFB2BF"
+                ></AiOutlineEyeInvisible>
               )}
             </span>
           </label>
         </div>
-        <button>Create Account</button>
+        <button className="bg-yellow-50 rounded-[8px] font-medium text-richblack-900 px-[12px] py-[8px] mt-6 w-full">
+          Create Account
+        </button>
       </form>
     </div>
   );
