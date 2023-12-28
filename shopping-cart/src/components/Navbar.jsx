@@ -1,24 +1,24 @@
 import { FaShoppingCart } from "react-icons/fa";
 import logo from "../assets/react.svg";
-import { Navlink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function () {
   return (
     <div className="flex flex-row justify-between">
-      <Navlink to="/">
+      <NavLink to="/">
         <div>
           <img src={logo} alt="" />
         </div>
-      </Navlink>
+      </NavLink>
       <div>
-        <Navlink to="/">
+        <NavLink to="/">
           <p>Home</p>
-        </Navlink>
-        <Navlink to="/cart">
+        </NavLink>
+        <NavLink to="/cart">
           <p>
             <FaShoppingCart></FaShoppingCart>
           </p>
-        </Navlink>
+        </NavLink>
       </div>
     </div>
   );
