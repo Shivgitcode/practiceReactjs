@@ -3,12 +3,13 @@ import { createSlice } from "@reduxjs/toolkit";
 export const PasswordSlice = createSlice({
   name: "password",
   initialState: {
-    value: "hello",
+    value: "",
   },
   reducers: {
     setPassword: (state, action) => {
       state.value = action.payload;
     },
+
     // generatePassword:(state)=>{
 
     // }
