@@ -17,12 +17,12 @@ function App() {
 
   return (
     <div className="w-full h-screen flex flex-col items-start justify-center bg-[#264653] font-poppins">
-      <div className=" ml-10 flex flex-col gap-6 items-start">
+      <div className=" ml-[200px] flex flex-col gap-7 items-start mb-10">
         <div>
           <h1 className="text-white text-[42px] text-left mb-5">
             Generate Password
           </h1>
-          <div className="flex justify-between rounded-md items-center bg-white py-5 px-5 min-h-[64px]">
+          <div className="flex justify-between min-w-[500px] rounded-md items-center bg-white py-5 px-5 min-h-[64px]">
             <p>{password === "" ? "password" : password}</p>{" "}
             <MdContentCopy
               onClick={copyPass}
