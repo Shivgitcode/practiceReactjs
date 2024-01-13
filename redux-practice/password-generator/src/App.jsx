@@ -16,18 +16,29 @@ function App() {
   }
 
   return (
-    <div className="w-full h-screen flex flex-col items-start justify-center">
-      <h1>Generate Password</h1>
-      <div>
-        {password}{" "}
-        <MdContentCopy
-          onClick={copyPass}
-          className="cursor-pointer"
-        ></MdContentCopy>
+    <div className="w-full h-screen flex flex-col items-start justify-center bg-[#264653] font-poppins">
+      <div className=" ml-10 flex flex-col gap-6 items-start">
+        <div>
+          <h1 className="text-white text-[42px] text-left mb-5">
+            Generate Password
+          </h1>
+          <div className="flex justify-between rounded-md items-center bg-white py-5 px-5 min-h-[64px]">
+            <p>{password === "" ? "password" : password}</p>{" "}
+            <MdContentCopy
+              onClick={copyPass}
+              className="cursor-pointer"
+              fill="green"
+            ></MdContentCopy>
+          </div>
+        </div>
+
+        <button
+          onClick={() => dispatch(setPassword(shufflePassword()))}
+          className=" bg-green-600 px-8 py-3 text-white rounded"
+        >
+          Generate
+        </button>
       </div>
-      <button onClick={() => dispatch(setPassword(shufflePassword()))}>
-        Generate
-      </button>
     </div>
   );
 }
